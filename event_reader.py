@@ -11,6 +11,3 @@ EVENT_TYPES = {
     7045: "New Windows service installed"
 }
 
-event_id = 4624
-
-print(EVENT_TYPES.get(event_id, "Unknown Event"))
