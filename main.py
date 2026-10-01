@@ -6,7 +6,8 @@ def main():
     print("WINDOWS EVENT LOG ANALYZER")
     print("-========================-")
     events = event_reader.read_logs()
-    print(events)
+    analysis = analyzer.event_analyze(events)
+    print(analysis)
 
 if __name__ == "__main__":
     main()
