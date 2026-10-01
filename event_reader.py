@@ -1,6 +1,6 @@
 import win32evtlog
 
-def read_logs(log_type="System", max_records=100):
+def read_logs(log_type="Security", max_records=100):
     server = 'localhost'
     hand = win32evtlog.OpenEventLog(server, log_type)
     flag = win32evtlog.EVENTLOG_BACKWARDS_READ | win32evtlog.EVENTLOG_SEQUENTIAL_READ
