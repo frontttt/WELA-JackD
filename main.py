@@ -7,7 +7,7 @@ def main():
     print("-========================-")
     events = event_reader.read_logs()
     analysis = analyzer.event_analyze(events)
-    print(analysis)
+    alerts.display_alerts(analysis)
 
 if __name__ == "__main__":
     main()
