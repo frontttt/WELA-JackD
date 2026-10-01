@@ -7,11 +7,13 @@ def read_logs(log_type="Security", max_records=100):
     total = win32evtlog.GetNumberOfEventLogRecords(hand)
     print(f"Total records in {log_type}: {total}\n")
     count = 0
+    event_ids = []
     while count < max_records:
         events = win32evtlog.ReadEventLog(hand, flag, 0)
         if not events:
             break
 
         for event in events:
-            event.EventID
+            event_ids.append(event.EventID)
             count += 1
+    return event_ids
