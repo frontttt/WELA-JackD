@@ -1,3 +1,5 @@
+import event_reader
+
 EVENT_TYPES = {
     4624: "Successful Logon",
     4625: "Failed Logon",
@@ -17,12 +19,16 @@ def event_analyze(events):
         "failed_logins": 0,
         "alerts": []
     }
-    for event in events:
-        event_id = event["event_id"]
-        if event_id == 4624:
-            results["successful_logins"] += 1
-        elif event_id == 4625:
-            results["failed_logins"] += 1
+
+    event_id = events
+    if event_id == 4624:
+        results["successful_logins"] += 1
+    elif event_id == 4625:
+        results["failed_logins"] += 1
+
+    print(f"Succesful Logins: {results["successful_logins"]}")
+    print(f"Failed Logins: {results["failed_logins"]}")
+    print(f"Alerts: {results["alerts"]}")
 
     return results
             
