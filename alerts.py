@@ -9,5 +9,4 @@ def display_alerts(results):
         print()
         print("=== ALERTS ===")
 
-        for alert in results["alerts"]:
-            print(f"[{alert['severity']}] {alert["message"]}")
+        print(results["alerts"])
